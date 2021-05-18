@@ -1,0 +1,19 @@
+
+====REQUEST LOG====
+requestURI: {},
+contextPath: {},
+remoteAddr: {},
+method: {},
+contentLength: {},
+body: {}
+====END REQUEST LOG====
+
+For You O Democracy
+BY WALT WHITMAN
+Come, I will make the continent indissoluble,
+I will make the most splendid race the sun ever shone upon,
+I will make divine magnetic lands,
+                   With the love of comrades,
+                      With the life-long love of comrades.
+
+I will...
