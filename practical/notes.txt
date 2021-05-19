@@ -9,7 +9,7 @@ body: {}
 ====END REQUEST LOG====
 
 For You O Democracy
-BY WALT WHITMAN
+BY %s
 Come, I will make the continent indissoluble,
 I will make the most splendid race the sun ever shone upon,
 I will make divine magnetic lands,
@@ -17,3 +17,18 @@ I will make divine magnetic lands,
                       With the life-long love of comrades.
 
 I will...
+
+{
+   "name": "John",
+   "lastName: "Doe",
+   "properties": [
+       {
+           "type": "car",
+           "price": 32000
+       },
+       {
+           "type": "bike",
+           "price": 200
+       }
+   ]
+}
