@@ -8,6 +8,7 @@ public class SealedClassesExample {
         Movable fiatUno = new FiatUno();
         Movable truck = new Truck();
 
+
         car.move();
         smallCar.move();
         fiatUno.move();

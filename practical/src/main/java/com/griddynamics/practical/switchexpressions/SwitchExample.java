@@ -73,7 +73,7 @@ public class SwitchExample {
 
         //Switch expression
         String result = switch (day) {
-            case MONDAY, TUESDAY, THURSDAY, FRIDAY -> "It's Monday";
+            case MONDAY -> "It's Monday";
             case SATURDAY, SUNDAY -> "It's weekend";
             case WEDNESDAY -> throw new IllegalArgumentException("We don't like Wednesday");
             default -> {
@@ -87,4 +87,34 @@ public class SwitchExample {
         };
         System.out.println(result);
     }
+
+
+    // Pattern Matching for switch
+    // Now
+    static String formatter(Object o) {
+        String formatted = "unknown";
+        if (o instanceof Integer i) {
+            formatted = String.format("int %d", i);
+        } else if (o instanceof Long l) {
+            formatted = String.format("long %d", l);
+        } else if (o instanceof Double d) {
+            formatted = String.format("double %f", d);
+        } else if (o instanceof String s) {
+            formatted = String.format("String %s", s);
+        }
+        return formatted;
+    }
+
+    // New preposition
+//    static String formatterPatternSwitch(Object o) {
+//        return switch (o) {
+//            case null      -> System.out.println("It's null!")
+//            case Integer i -> String.format("int %d", i);
+//            case Long l    -> String.format("long %d", l);
+//            case Double d  -> String.format("double %f", d);
+//            case String s  -> String.format("String %s", s);
+//                default    -> o.toString();
+//        };
+//    }
+
 }

@@ -32,7 +32,7 @@ public class TeeingExample {
                                 // second collector
                                 Collectors.summingInt(n -> Integer.parseInt(n.toString())),
                                 // merger: (count, sum) -> new Result(count, sum);
-                                Result::new
+                                ResultRecord::new
                         ));
 
         System.out.println(result); // -> {count=4, sum=57}
@@ -50,6 +50,7 @@ public class TeeingExample {
     }
 
     @ToString
+    @Getter
     private static class Result {
         private long count;
         private int sum;
@@ -59,6 +60,8 @@ public class TeeingExample {
             this.sum = sum;
         }
     }
+
+    private static record ResultRecord(long count, int sum) {}
 
     @ToString
     @Getter

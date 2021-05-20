@@ -1,5 +1,6 @@
 package com.griddynamics.practical.stringblocks;
 
+import javassist.tools.web.BadHttpRequest;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -37,13 +38,23 @@ public class LoggingFilter extends OncePerRequestFilter {
         int contentLength = request.getContentLength();
         String body = getBody(request);
 
-        log.info(LOGGER_MESSAGE,
-                requestURI,
-                contextPath,
-                remoteAddr,
-                method,
-                contentLength,
-                body);
+        String correctJson = """
+                {
+                    "name":"John Doe",
+                    "id":1
+                }""";
+
+        if(!body.equals(correctJson)){
+            throw new IllegalArgumentException();
+        } else {
+            log.info(LOGGER_MESSAGE,
+                    requestURI,
+                    contextPath,
+                    remoteAddr,
+                    method,
+                    contentLength,
+                    body);
+        }
     }
 
     private String getBody(HttpServletRequest request) {

@@ -1,6 +1,5 @@
 package com.griddynamics.practical.stringblocks;
 
-import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -8,7 +7,6 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 
 @RestController
-@RequiredArgsConstructor
 public class TextBlocksController {
     private static final String AUTHOR = "WALT WHITMAN";
     private static final String POEM = "For You O Democracy\n" +
@@ -22,8 +20,8 @@ public class TextBlocksController {
             "I will...";
 
     @GetMapping("/getPoem")
-    public ResponseEntity<String> getRequest(HttpServletRequest request){
-        return ResponseEntity.ok().body(POEM.formatted(AUTHOR));
+    public ResponseEntity<String> getRequest(HttpServletRequest request) {
+            return ResponseEntity.ok().body(POEM.formatted(AUTHOR));
     }
 
 }
